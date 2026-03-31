@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coren</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0f1c;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background: #050914;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      color: #00aaff;
+    }
+
+    .logo span {
+      font-size: 22px;
+      color: #ccc;
+      font-weight: normal;
+    }
+
+    section {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 500px;
+      background: #111827;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #00aaff;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00aaff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0088cc;
+    }
+
+    .quote {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #050914;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <div class="logo">C<span>oren</span></div>
+  <p>Fast Trusted Workers Near You</p>
+</header>
+
+<!-- WORKER REGISTRATION -->
+<section>
+  <h2>Register as a Worker</h2>
+  <p class="quote">Be part of the 1000+ skilled workers earning daily</p>
+
+  <input id="w_name" placeholder="Full Name">
+  <input id="w_phone" placeholder="Phone Number">
+
+  <select id="w_skill">
+    <option>Select Skill</option>
+    <option>Plumbing</option>
+    <option>Mechanics</option>
+    <option>Wedding Organizer</option>
+    <option>Teacher</option>
+    <option>Hairdresser</option>
+    <option>Barber</option>
+    <option>Electrician</option>
+    <option>Construction Worker</option>
+  </select>
+
+  <input type="file" id="ghanaCard">
+
+  <input id="w_region" placeholder="Region">
+  <input id="w_town" placeholder="Town">
+
+  <button onclick="registerWorker()">Register</button>
+</section>
+
+<!-- HIRE WORKER -->
+<section>
+  <h2>Hire a Worker</h2>
+
+  <input id="h_name" placeholder="Your Name">
+  <input id="h_phone" placeholder="Phone Number">
+  <input id="h_region" placeholder="Region">
+  <input id="h_town" placeholder="Town">
+
+  <select id="h_skill">
+    <option>Select Worker Type</option>
+    <option>Plumbing</option>
+    <option>Mechanics</option>
+    <option>Wedding Organizer</option>
+    <option>Teacher</option>
+    <option>Hairdresser</option>
+    <option>Barber</option>
+    <option>Electrician</option>
+    <option>Construction Worker</option>
+  </select>
+
+  <button onclick="hireWorker()">Hire Now</button>
+</section>
+
+<!-- CONTACT -->
+<footer>
+  <p>Contact CEO / Manager</p>
+  <p>Email: rochmondbotwe@gmail.com</p>
+  <p>Phone: +233 508 938 783</p>
+  <p>All transactions should be directed to this number</p>
+</footer>
+
+<script>
+
+function registerWorker() {
+  let name = document.getElementById("w_name").value;
+  let phone = document.getElementById("w_phone").value;
+  let skill = document.getElementById("w_skill").value;
+  let region = document.getElementById("w_region").value;
+  let town = document.getElementById("w_town").value;
+
+  let msg = `Worker Registration:%0AName: ${name}%0APhone: ${phone}%0ASkill: ${skill}%0ARegion: ${region}%0ATown: ${town}`;
+
+  window.open("https://wa.me/233508938783?text=" + msg);
+}
+
+function hireWorker() {
+  let name = document.getElementById("h_name").value;
+  let phone = document.getElementById("h_phone").value;
+  let region = document.getElementById("h_region").value;
+  let town = document.getElementById("h_town").value;
+  let skill = document.getElementById("h_skill").value;
+
+  let msg = `Hire Request:%0AName: ${name}%0APhone: ${phone}%0ARegion: ${region}%0ATown: ${town}%0AWorker Needed: ${skill}`;
+
+  window.open("https://wa.me/233508938783?text=" + msg);
+}
+
+</script>
+
+</body>
+</html>
